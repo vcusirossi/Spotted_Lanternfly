@@ -1,12 +1,12 @@
 # Spotted_Lanternfly
 <br>
 <br>
-##Overview:
+## Overview:
 <br>
 Observational data was retrieved from www.iNaturalist.com. iNaturalist is a 501c3 non profit organization that creates a citizen science platform where users contribute biodiversity observations by photograph or sound recording. Observations may include the complete linnaean classification, GPS locations, and dates. Additional parameters include life stages and type of evidence of life. The website and app contains crowd-sourced data to receive help with species identifications, collaborate with other citizen scientists for a common purpose, or access additional observational data collected by iNaturalist users for ecological or biological research Data Collection The data was subsetted for only Spotted lanternfly (Lycorma delicatula) observations. Data was downloaded as a comma separated values file (CSV file).
 <br>
 <br>
-##Method:
+## Method:
 <br>
 Python with pandas was used to clean the data.<br>
   -The dataset was cleaned to remove observations not within the United States. Observations were filtered for “Research Grade” observations which are observations that are confirmed by an identifier or subject matter expert. <br>
@@ -19,7 +19,7 @@ Python with pandas was used to clean the data.<br>
   -a new data frame was created and named lanternfly1 the cleaned data was then saved to an updated CSV file named ‘cleaned_lanternfly.csv’. <br>
 <br>
 <br>
-##Terminology:
+## Terminology:
 <br>
 **id** – observation identification number observed_on_string – time and date of observation not standardized <br>
 **observed_on**- date of observation with standardized date<br>
@@ -49,6 +49,6 @@ Python with pandas was used to clean the data.<br>
 **taxon_id** - taxon identification of the observation<br>
 <br>
 <br>
-##Source:
+## Source:
 <br>
 iNaturalist community. Observations of Lycorma delicatula from United States, Exported from https://www.inaturalist.org on 2/8/2025
