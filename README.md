@@ -1,54 +1,60 @@
-# Spotted_Lanternfly
-<br>
-<br>
-## Overview:
-<br>
-Observational data was retrieved from www.iNaturalist.com. iNaturalist is a 501c3 non profit organization that creates a citizen science platform where users contribute biodiversity observations by photograph or sound recording. Observations may include the complete linnaean classification, GPS locations, and dates. Additional parameters include life stages and type of evidence of life. The website and app contains crowd-sourced data to receive help with species identifications, collaborate with other citizen scientists for a common purpose, or access additional observational data collected by iNaturalist users for ecological or biological research Data Collection The data was subsetted for only Spotted lanternfly (Lycorma delicatula) observations. Data was downloaded as a comma separated values file (CSV file).
-<br>
-<br>
-## Method:
-<br>
-Python with pandas was used to clean the data.<br>
-  -The dataset was cleaned to remove observations not within the United States. Observations were filtered for “Research Grade” observations which are observations that are confirmed by an identifier or subject matter expert. <br>
-  -The .drop function from pandas removed the columns uuid, private_latitude, and private_longtitude. <br>
-  -The Following column names were adjusted to the following using the rename function: <br>
-    -'place_town_name' to 'town', <br>
-    -'place_county_name' to 'county', <br>
-    -'place_state_name' to 'state', <br>
-    -'place_country_name' to 'country' <br>
-  -a new data frame was created and named lanternfly1 the cleaned data was then saved to an updated CSV file named ‘cleaned_lanternfly.csv’. <br>
-<br>
-<br>
-## Terminology:
-<br>
-**id** – observation identification number observed_on_string – time and date of observation not standardized <br>
-**observed_on**- date of observation with standardized date<br>
-**time_observed_at** - date, time, and time zone of observation standardized<br>
-**time_zone** – observation time zone<br>
-**user_id** – user identification number<br>
-**user_login** – user login name on inaturalist platform that recorded observation user_name – user first and last name of who conducted observation<br>
-**created_at** – date, time, and time zone the observation was uploaded to iNaturalist updated_at – date, time, and time zone the observation was updated quality_grade – quality grade of the observation based on iNaturlaist’s standards<br>
-**tag_list** – additional information user can input when documenting observation such as life cycle stage description – user can add a description of the observation<br>
-**num_identification_agreements** – number of other users who agree with the identification of the species num_identification_disagreements - number of users who disagree with the identification of the species captive_cultivated - if the species is captive or cultivated<br>
-**oauth_application_id** - identification if observation was uploaded via website our though the app place_guess – a field the user is able to input the location they found the observation
-**latitude** – geographical location in decimal degrees<br>
-**longitude** – geographical locationin decimal degrees<br>
-**positional_accuracy** - positional accuracy of location of observation<br>
-**public_positional_accuracy** - positional accuracy of location of observation not obscured<br>
-**geoprivacy** - disclosure of observations location<br>
-**taxon_geoprivacy** - if taxon location is restricted for threated taxa<br>
-**coordinates_obscured** - location on visible to inaturalist staff or researchers<br>
-**positioning_method** - how coordinates were obtained for observation positioning_device - device coordinates were obtained for observation town – town that the observation was located<br>
-**county** – county where observation was located<br>
-**state** - state where observation was located<br>
-**country** – country where the observation was located<br>
-**species_guess** – species guess by the user of what the observation is<br>
-**scientific_name** – scientific name of the observation<br>
-**common_name** – common name of the observation<br>
-**iconic_taxon_name** – taxon name of the observation<br>
-**taxon_id** - taxon identification of the observation<br>
-<br>
-<br>
-## Source:
-<br>
-iNaturalist community. Observations of Lycorma delicatula from United States, Exported from https://www.inaturalist.org on 2/8/2025
+# Spotted Lanternfly
+
+## Overview
+Observational data was retrieved from [iNaturalist](https://www.inaturalist.org). iNaturalist is a 501(c)(3) non-profit organization that creates a citizen science platform where users contribute biodiversity observations by photograph or sound recording. Observations may include the complete Linnaean classification, GPS locations, and dates. Additional parameters include life stages and type of evidence of life. The website and app contain crowd-sourced data to receive help with species identifications, collaborate with other citizen scientists for a common purpose, or access additional observational data collected by iNaturalist users for ecological or biological research.
+
+**Data Collection**: The data was subsetted for only Spotted Lanternfly (Lycorma delicatula) observations. Data was downloaded as a comma-separated values (CSV) file.
+
+## Method
+Python with pandas was used to clean the data.
+
+- The dataset was cleaned to remove observations not within the United States.
+- Observations were filtered for “Research Grade” observations, which are confirmed by an identifier or subject matter expert.
+- The `.drop` function from pandas removed the columns `uuid`, `private_latitude`, and `private_longitude`.
+- The following column names were adjusted using the `rename` function:
+  - `place_town_name` to `town`
+  - `place_county_name` to `county`
+  - `place_state_name` to `state`
+  - `place_country_name` to `country`
+- A new data frame was created and named `lanternfly1`. The cleaned data was then saved to an updated CSV file named `cleaned_lanternfly.csv`.
+
+## Terminology
+- **id**: Observation identification number
+- **observed_on_string**: Time and date of observation, not standardized
+- **observed_on**: Date of observation, standardized
+- **time_observed_at**: Date, time, and time zone of observation, standardized
+- **time_zone**: Observation time zone
+- **user_id**: User identification number
+- **user_login**: User login name on iNaturalist platform that recorded observation
+- **user_name**: User first and last name of who conducted observation
+- **created_at**: Date, time, and time zone the observation was uploaded to iNaturalist
+- **updated_at**: Date, time, and time zone the observation was updated
+- **quality_grade**: Quality grade of the observation based on iNaturalist’s standards
+- **tag_list**: Additional information user can input when documenting observation, such as life cycle stage
+- **description**: User can add a description of the observation
+- **num_identification_agreements**: Number of other users who agree with the identification of the species
+- **num_identification_disagreements**: Number of users who disagree with the identification of the species
+- **captive_cultivated**: If the species is captive or cultivated
+- **oauth_application_id**: Identification if observation was uploaded via website or through the app
+- **place_guess**: A field the user is able to input the location they found the observation
+- **latitude**: Geographical location in decimal degrees
+- **longitude**: Geographical location in decimal degrees
+- **positional_accuracy**: Positional accuracy of location of observation
+- **public_positional_accuracy**: Positional accuracy of location of observation not obscured
+- **geoprivacy**: Disclosure of observations location
+- **taxon_geoprivacy**: If taxon location is restricted for threatened taxa
+- **coordinates_obscured**: Location only visible to iNaturalist staff or researchers
+- **positioning_method**: How coordinates were obtained for observation
+- **positioning_device**: Device coordinates were obtained for observation
+- **town**: Town that the observation was located
+- **county**: County where observation was located
+- **state**: State where observation was located
+- **country**: Country where the observation was located
+- **species_guess**: Species guess by the user of what the observation is
+- **scientific_name**: Scientific name of the observation
+- **common_name**: Common name of the observation
+- **iconic_taxon_name**: Taxon name of the observation
+- **taxon_id**: Taxon identification of the observation
+
+## Source
+iNaturalist community. Observations of Lycorma delicatula from the United States. Exported from [iNaturalist](https://www.inaturalist.org) on 2/8/2025.
